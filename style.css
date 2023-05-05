@@ -39,6 +39,7 @@ body {
 }
 
 .navbar a {
+    display: inline-block;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
@@ -47,6 +48,7 @@ body {
 
     opacity: 0;
     animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 .navbar a:hover,
@@ -71,6 +73,9 @@ home-content{
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
+    opacity: 1;
+    animation: slideBotton 1s ease forwards;
+    animation-delay: .7s;
 
 }
 
@@ -80,6 +85,8 @@ home-content{
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
 }
 
 
@@ -87,6 +94,9 @@ home-content{
     font-size: 56px;
     font-weight: 700;
     margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .1s;
 }
 
 .home-content p {
@@ -156,6 +166,17 @@ home-content{
 @keyframes slideTop {
     0% {
         transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBotton {
+    0% {
+        transform: translateY(-100px);
         opacity: 0;
     }
 
